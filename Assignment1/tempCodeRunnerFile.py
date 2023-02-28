@@ -1,12 +1,18 @@
-num = int(input("Enter a number: "))
-sum = 0
-count = 0
+num = int(input("Enter the number: "))
+sumOfEvenDigits = 0
+countOfEvenDigits = 0
+sumOfOddDigits = 0
+countOfOddDigits = 0
 while num > 0:
     digit = int(num % 10)
-    for i in range(1,digit + 1):
-        if digit % i == 0:
-            count += 1
-    if count == 2:
-        sum += digit
+    if digit % 2 == 0 and digit % 4 != 0: 
+        sumOfEvenDigits += digit
+        countOfEvenDigits += 1
+    elif digit % 2 != 0 and digit % 3 != 0: 
+        sumOfOddDigits += digit
+        countOfOddDigits += 1
     num /= 10
-print("Sum of all odd digits is: %i" % sum)
+averageOfEvenDigits = sumOfEvenDigits / countOfEvenDigits
+averageOfOddDigits = sumOfOddDigits / countOfOddDigits
+differenceofEvenOddDigits = averageOfEvenDigits - averageOfOddDigits
+print("Difference between average of sum of all even digits except divisible by 4 and average of sum of all odd digits except divisible by divisible by 3: %i" % differenceofEvenOddDigits)

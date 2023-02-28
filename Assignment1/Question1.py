@@ -9,3 +9,14 @@ while num != 0:
 print("Sum of all digits is: %i" % sum)
 
 
+# II. Sum of all even digits of any number
+num = int(input("Enter a number: "))
+sum = 0
+while num > 0:
+    digit = int(num % 10)
+    if digit % 2 == 0:
+        sum += digit
+    num /= 10
+print("Sum of all even digits is: %i" % sum)
+
+
